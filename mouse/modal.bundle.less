@@ -1,0 +1,50 @@
+@import (reference) "./_imports.less";
+
+.modal {
+	&__open {
+		.clickable();
+	}
+
+	&__trigger {
+		.offscreen();
+	}
+
+	&__trigger:checked + &__display {
+		.fadeIn(300ms, fixed);
+	}
+
+	&__display {
+		.fadeOut(300ms, fixed);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		max-width: 640px;
+	}
+
+	&__backdrop {
+		position: absolute;
+		z-index: 0;
+		left: 50%;
+		top: 50%;
+		width: 100vw;
+		height: 100vh;
+		background-color: @colours[darkest];
+		opacity: 0.8;
+		transform: translate(-50%, -50%);
+	}
+
+	&__close {
+		position: absolute;
+		top: 0.25em;
+		right: 0.75em;
+		z-index: 2;
+		.clickable();
+	}
+
+	&__content {
+		position: relative;
+		z-index: 1;
+		.as-outlined-box();
+	}
+}

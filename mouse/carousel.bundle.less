@@ -1,0 +1,39 @@
+@import (reference) "./_imports.less";
+
+.carousel {
+
+	text-align: center;
+
+	&__open {
+		width: 1em;
+		height: 1em;
+		overflow: hidden;
+		border-radius: 50%;
+		background-color: @colours[lighter];
+		display: inline-block;
+		.clickable();
+
+		> * {
+			visibility: hidden;
+		}
+	}
+
+	&__display {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		scroll-behavior: smooth;
+		margin-bottom: 1em;
+	}
+
+	&__content-wrapper {
+		width: 500%;
+	}
+
+	&__content {
+		float: left;
+		width: 20%;
+		.as-outlined-flat-box();
+	}
+
+}

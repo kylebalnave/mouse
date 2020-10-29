@@ -1,0 +1,7 @@
+[style*="--trackingId"]:active:after {
+  position: fixed;
+  top: -999px;
+  left: -999px;
+  content: "";
+  background-image: var(--trackingId);
+}

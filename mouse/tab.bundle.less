@@ -1,0 +1,45 @@
+@import (reference) "./_imports.less";
+
+.tabs {
+
+	letter-spacing: -0.31em;
+	>* {
+		letter-spacing: normal;
+	}
+
+	&__open {
+		.as-outlined-flat-box();
+		border-radius: 0;
+
+		.clickable();
+
+		display: inline-block;
+		margin-right: -2px;
+		margin-bottom: -2px;
+
+		&:first-of-type {
+			border-top-left-radius: 0.5em;
+		}
+
+		&:last-of-type {
+			border-top-right-radius: 0.5em;
+		}
+
+	}
+
+	&__trigger {
+		.offscreen();
+	}
+
+	&__display {
+		.hide();
+		.as-outlined-flat-box();
+		border-top-left-radius: 0;
+		border-top-right-radius: 0.5em;
+	}
+
+	&__trigger:checked + &__display {
+		.show(static);
+	}
+
+}

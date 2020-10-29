@@ -1,0 +1,56 @@
+.modal__open {
+  cursor: pointer;
+}
+.modal__trigger {
+  position: fixed;
+  top: -999px;
+  left: -999px;
+}
+.modal__trigger:checked + .modal__display {
+  transition: visibility 0s linear 0s, position 0s linear 0s, opacity 300ms linear;
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+}
+.modal__display {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  transition: visibility 0s linear 300ms, position 0s linear 300ms, opacity 300ms linear;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 640px;
+}
+.modal__backdrop {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d0d0d;
+  opacity: 0.8;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.modal__close {
+  position: absolute;
+  top: 0.25em;
+  right: 0.75em;
+  z-index: 2;
+  cursor: pointer;
+}
+.modal__content {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 2px solid #cccccc;
+  padding: 1em;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.35);
+}

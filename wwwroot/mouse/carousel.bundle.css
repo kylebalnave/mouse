@@ -1,0 +1,33 @@
+.carousel {
+  text-align: center;
+}
+.carousel__open {
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #cccccc;
+  display: inline-block;
+  cursor: pointer;
+}
+.carousel__open > * {
+  visibility: hidden;
+}
+.carousel__display {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  margin-bottom: 1em;
+}
+.carousel__content-wrapper {
+  width: 500%;
+}
+.carousel__content {
+  float: left;
+  width: 20%;
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 2px solid #cccccc;
+  padding: 1em;
+}

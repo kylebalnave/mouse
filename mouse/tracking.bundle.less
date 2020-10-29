@@ -1,0 +1,15 @@
+@import (reference) "./_imports.less";
+
+//#region tracking
+
+[style*="--trackingId"] {
+	&:active {
+		&:after {
+			.offscreen();
+			content: "";
+			background-image: var(--trackingId);
+		}
+	}
+}
+
+//#endregion

@@ -1,0 +1,37 @@
+.accordian__open {
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 2px solid #cccccc;
+  padding: 1em;
+  border-radius: 0;
+  margin-top: 0.25em;
+  margin-bottom: -2px;
+  display: block;
+  cursor: pointer;
+}
+.accordian__open:first-of-type {
+  margin-top: 0;
+}
+.accordian__trigger {
+  position: fixed;
+  top: -999px;
+  left: -999px;
+}
+.accordian__display {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: visibility 0s linear 0ms, position 0s linear 0ms, opacity 0ms linear;
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 2px solid #cccccc;
+  padding: 1em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.accordian__trigger:checked + .accordian__display {
+  transition: visibility 0s linear 0s, position 0s linear 0s, opacity 0ms linear;
+  opacity: 1;
+  visibility: visible;
+  position: static;
+}

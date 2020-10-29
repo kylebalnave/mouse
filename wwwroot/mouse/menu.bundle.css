@@ -1,0 +1,39 @@
+.menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.menu__trigger {
+  position: fixed;
+  top: -999px;
+  left: -999px;
+}
+.menu__open {
+  cursor: pointer;
+}
+.menu__close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0.5em;
+}
+.menu__display {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: visibility 0s linear 300ms, position 0s linear 300ms, opacity 300ms linear;
+  top: 0.25em;
+  left: 1em;
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 2px solid #cccccc;
+  padding: 1em;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.35);
+}
+.menu__trigger:checked ~ .menu__display {
+  transition: visibility 0s linear 0s, position 0s linear 0s, opacity 300ms linear;
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+}

@@ -1,0 +1,71 @@
+@colours: {
+	darkest: lighten(#000, 5%);
+	darker: lighten(#000, 20%);
+	dark: lighten(#000, 35%);
+	mid: lighten(#000, 50%);
+	light: darken(#fff, 35%);
+	lighter: darken(#fff, 20%);
+	lightest: darken(#fff, 5%);
+	white: #fff;
+}
+
+@padding: {
+	standard: 1em;
+}
+
+//#region animations and transitions
+
+.show(@position: static) {
+	.fadeIn(0ms, @position);
+}
+
+.hide(@position: absolute) {
+	.fadeOut(0ms, @position);
+}
+
+.fadeIn(@durationMs : 300ms; @position: initial) {
+	transition: visibility 0s linear 0s, position 0s linear 0s, opacity @durationMs linear;
+	opacity: 1;
+	visibility: visible;
+	position: @position;
+}
+
+.fadeOut(@durationMs : 300ms; @position: absolute) {
+	opacity: 0;
+	visibility: hidden;
+	position: @position;
+	transition: visibility 0s linear @durationMs, position 0s linear @durationMs, opacity @durationMs linear;
+}
+
+//#endregion
+
+//#region mixin/decorator helpers
+
+.offscreen {
+	position: fixed;
+	top: -999px;
+	left: -999px;
+}
+
+.centered-block() {
+	display: block;
+	margin: 0 auto;
+}
+
+.as-outlined-flat-box() {
+	background-color: @colours[white];
+	border-radius: 0.5em;
+	border: 2px solid @colours[lighter];
+	padding: @padding[standard];
+}
+
+.as-outlined-box() {
+	.as-outlined-flat-box();
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.35);
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+//#endregion

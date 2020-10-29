@@ -1,0 +1,34 @@
+@import (reference) "./_imports.less";
+
+.menu {
+
+	position: sticky;
+	top: 0;
+	z-index: 99;
+
+	&__trigger {
+		.offscreen();
+	}
+
+	&__open {
+		.clickable();
+	}
+
+	&__close {
+		.clickable();
+		position: absolute;
+		top: 0;
+		right: 0.5em;
+	}
+
+	&__display {
+		.fadeOut(300ms, absolute);
+		top: 0.25em;
+		left: 1em;
+		.as-outlined-box();
+	}
+
+	&__trigger:checked ~ &__display {
+		.fadeIn(300ms, absolute);
+	}
+}

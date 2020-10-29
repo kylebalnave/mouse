@@ -1,0 +1,30 @@
+@import (reference) "./_imports.less";
+@import "./accordian.bundle.less";
+@import "./carousel.bundle.less";
+@import "./modal.bundle.less";
+@import "./menu.bundle.less";
+@import "./tab.bundle.less";
+@import "./tracking.bundle.less";
+
+//#region asthetics
+
+body {
+	background-image: linear-gradient(45deg, @colours[lightest] 10%, @colours[lighter] 10%, @colours[lighter] 50%, @colours[lightest] 50%,@colours[lightest] 60%, @colours[lighter] 60%, @colours[lighter] 100%);
+	background-size: 50.00px 50.00px;
+}
+
+main {
+	max-width: 1024px;
+	.centered-block();
+	.as-outlined-box();
+}
+
+.mouse {
+	font-size: 1.25rem;
+	> * {
+		display: block;
+		text-align: center;
+	}
+}
+
+//#endregion

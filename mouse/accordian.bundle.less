@@ -1,0 +1,36 @@
+@import (reference) "./_imports.less";
+
+.accordian {
+
+	&__open {
+
+		.as-outlined-flat-box();
+		border-radius: 0;
+		margin-top: 0.25em;
+		margin-bottom: -2px;
+		display: block;
+
+		.clickable();
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+
+	}
+
+	&__trigger {
+		.offscreen();
+	}
+
+	&__display {
+		.hide();
+		.as-outlined-flat-box();
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	&__trigger:checked + &__display {
+		.show(static);
+	}
+
+}

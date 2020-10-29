@@ -1,0 +1,46 @@
+.tabs {
+  letter-spacing: -0.31em;
+}
+.tabs > * {
+  letter-spacing: normal;
+}
+.tabs__open {
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 2px solid #cccccc;
+  padding: 1em;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: -2px;
+  margin-bottom: -2px;
+}
+.tabs__open:first-of-type {
+  border-top-left-radius: 0.5em;
+}
+.tabs__open:last-of-type {
+  border-top-right-radius: 0.5em;
+}
+.tabs__trigger {
+  position: fixed;
+  top: -999px;
+  left: -999px;
+}
+.tabs__display {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: visibility 0s linear 0ms, position 0s linear 0ms, opacity 0ms linear;
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 2px solid #cccccc;
+  padding: 1em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0.5em;
+}
+.tabs__trigger:checked + .tabs__display {
+  transition: visibility 0s linear 0s, position 0s linear 0s, opacity 0ms linear;
+  opacity: 1;
+  visibility: visible;
+  position: static;
+}
